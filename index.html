@@ -1,238 +1,52 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏠 ฟอร์มกรอกข้อมูลเยี่ยมบ้านแสนสนุก</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root {
-            --primary-color: #ff9a9e;
-            --secondary-color: #fecfef;
-            --accent-color: #a1c4fd;
-            --text-color: #4a4a4a;
-        }
-
         body {
             font-family: 'Kanit', sans-serif;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
-
-        .container {
+        .wrapper {
             background: white;
-            padding: 30px;
+            padding: 15px;
             border-radius: 24px;
             box-shadow: 0 10px 30px rgba(255, 154, 158, 0.15);
             width: 100%;
-            max-width: 550px;
-            border: 4px solid var(--secondary-color);
-        }
-
-        h2 {
-            color: #ff6b81;
+            max-width: 650px;
+            border: 4px solid #fecfef;
             text-align: center;
-            margin-top: 0;
-            font-size: 26px;
         }
-
-        p.subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        label i {
-            margin-right: 5px;
-            color: #ff6b81;
-        }
-
-        input[type="text"], input[type="tel"], textarea {
+        h2 { color: #ff6b81; margin-bottom: 5px; }
+        p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        
+        /* กล่องฝังตัว Google Form */
+        iframe {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #eed6e6;
-            border-radius: 12px;
-            box-sizing: border-box;
-            font-family: 'Kanit', sans-serif;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background-color: #fff9fd;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 8px rgba(255, 154, 158, 0.3);
-            background-color: #fff;
-        }
-
-        .geo-box {
-            background: #f0f4ff;
-            padding: 15px;
-            border-radius: 16px;
-            border: 2px dashed var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .btn-gps {
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-            color: #2c3e50;
+            height: 75vh;
             border: none;
-            padding: 12px;
-            width: 100%;
             border-radius: 12px;
-            font-family: 'Kanit', sans-serif;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-gps:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(161, 196, 253, 0.4);
-        }
-
-        #status {
-            font-size: 13px;
-            margin-top: 8px;
-            color: #666;
-            text-align: center;
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            color: white;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 15px;
-            font-family: 'Kanit', sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(255, 154, 158, 0.5);
-        }
-
-        .note {
-            font-size: 12px;
-            color: #b2bec3;
-            text-align: center;
-            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>🏠 ข้อมูลการเยี่ยมบ้านแสนสนุก</h2>
-    <p class="subtitle">รบกวนนักเรียนและผู้ปกครองกรอกข้อมูลให้ครบถ้วนนะจ๊ะ 😊</p>
+<div class="wrapper">
+    <h2>🏠 ระบบข้อมูลเยี่ยมบ้านออนไลน์</h2>
+    <p>รบกวนนักเรียนและผู้ปกครอง เลื่อนกรอกข้อมูลและแนบรูปภาพด้านล่างนี้ให้ครบถ้วนนะจ๊ะ 😊</p>
 
-    <form id="visitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfv6MGSNtMAf9ZkhLyYN3sLo7Mc8y_QrJKnETWgwyE0CKUZzA/formResponse" method="POST" target="_hidden_iframe">
-        
-        <div class="input-group">
-            <label><i class="fa-solid fa-user"></i> ชื่อ - นามสกุล</label>
-            <input type="text" name="entry.1593855562" placeholder="ตัวอย่าง: ด.ช. สมชาย รักเรียน" required>
-        </div>
-
-        <div class="input-group">
-            <label><i class="fa-solid fa-face-smile"></i> ชื่อเล่น</label>
-            <input type="text" name="entry.2064560799" placeholder="ตัวอย่าง: น้องบอย">
-        </div>
-
-        <div class="input-group">
-            <label><i class="fa-solid fa-phone"></i> เบอร์โทรศัพท์</label>
-            <input type="tel" name="entry.122421334" placeholder="ตัวอย่าง: 089-XXXXXXX" required>
-        </div>
-
-        <div class="geo-box">
-            <label><i class="fa-solid fa-map-location-dot"></i> ลิงก์แผนที่บ้าน (พิกัด GPS)</label>
-            <button type="button" class="btn-gps" onclick="getLocation()">
-                <i class="fa-solid fa-location-crosshairs"></i> กดตรงนี้เพื่อจับพิกัดปัจจุบันอัตโนมัติ
-            </button>
-            <p id="status">ยังไม่ได้ดึงพิกัด (กรุณากดปุ่มด้านบนเมื่ออยู่บริเวณบ้าน)</p>
-            <input type="text" id="mapLink" name="entry.1119782522" placeholder="ลิงก์ Google Maps จะปรากฏที่นี่" readonly required style="margin-top: 10px; background-color: #eef2f7;">
-        </div>
-
-        <div class="input-group">
-            <label><i class="fa-solid fa-house-medical"></i> บ้านอยู่ใกล้กับอะไร (จุดสังเกต)</label>
-            <textarea name="entry.454226194" rows="3" placeholder="ตัวอย่าง: อยู่ใกล้กับร้านขายของชำหน้าปากซอย หรือเยื้องวัด..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-submit">ส่งข้อมูลเยี่ยมบ้าน ✨</button>
-    </form>
-    
-    <p class="note">*หมายเหตุ: ระบบจะส่งข้อมูลทั้งหมดเข้าสู่ฐานข้อมูลของคุณครูโดยตรงอย่างปลอดภัยครับ</p>
+    <!-- ⚠️ สลับเอาลิงก์ Google Form ตัวจริงของคุณครูมาใส่ตรง src ด้านล่างนี้ได้เลยครับ -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfv6MGSNtMAf9ZkhLyYN3sLo7Mc8y_QrJKnETWgwyE0CKUZzA/viewform?embedded=true">กำลังโหลดแบบฟอร์ม...</iframe>
 </div>
-
-<iframe name="_hidden_iframe" style="display:none;" onload="if(submitted) {alert('🎉 ส่งข้อมูลเยี่ยมบ้านเรียบร้อยแล้วจ้า ขอบคุณมากครับ!'); window.location.reload();}"></iframe>
-
-<script>
-    let submitted = false;
-    document.getElementById('visitForm').onsubmit = function() {
-        submitted = true;
-    };
-
-    function getLocation() {
-        const status = document.getElementById("status");
-        const mapLinkInput = document.getElementById("mapLink");
-
-        if (!navigator.geolocation) {
-            status.innerHTML = "❌ เบราว์เซอร์ของคุณไม่รองรับระบบจับพิกัด GPS";
-            return;
-        }
-
-        status.innerHTML = "⏳ กำลังค้นหาตำแหน่งพิกัดบ้านของคุณสักครู่...";
-
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                // สร้างลิงก์แผนที่แบบสากล
-                const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
-                
-                mapLinkInput.value = googleMapsUrl;
-                status.innerHTML = "✅ จับพิกัดบ้านสำเร็จเรียบร้อยแล้ว!";
-                status.style.color = "#2ecc71";
-            },
-            (error) => {
-                status.innerHTML = "❌ ดึงพิกัดล้มเหลว (โปรดกด 'อนุญาต' หรือ 'Allow' ให้เว็บเข้าถึงสิทธิ์ตำแหน่งที่ตั้ง)";
-                status.style.color = "#e74c3c";
-            },
-            { enableHighAccuracy: true, timeout: 10000 }
-        );
-    }
-</script>
 
 </body>
 </html>
